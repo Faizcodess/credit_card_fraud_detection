@@ -14,20 +14,10 @@ def sendmail():
     subjectval="Alert Message"
     bodyval="Fraud Transaction Detected!!. Please Enquire Further"
     message="subject:{}\n\n{}".format(subjectval,bodyval)
-    obj.login("faizanali6509@gmail.com","gtuodvlivsfmptdz")
-    obj.sendmail("faizanali6509@gmail.com","mdnaveeda02@gmail.com",message)
+    obj.login("MAIL ID","APP PASSWORD")
+    obj.sendmail("SENDER ID","RECEIVER ID",message)
     obj.quit()
 
-
-def encode(lst):
-    num1 = random.random()
-    num2 = random.random()
-    num3 = random.random()
-
-    lst[0]=lst[0]+str(num1)
-    lst[1]=lst[1]+str(num2)
-    lst[2]=lst[2]+str(num3)
-    return lst
 
 data=pd.read_csv('card_transdata.csv')
 
@@ -81,7 +71,6 @@ input_df_lst = input_df.split(',')
 submit = st.button("Submit")
 
 if submit:
-    input_df_lst=encode(input_df_lst)
     # get input feature values
     features = np.array(input_df_lst, dtype=np.float64)
     # make prediction
